@@ -1,0 +1,28 @@
+{
+    "name": "interpro/answerer",
+    "description": "Ответы на вопросы",
+    "keywords": ["answerer"],
+    "homepage": "https://github.com/intpro/answerer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Boris Dorofeev",
+            "email": "boris.dorofeev2014@yandex.ru",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Interpro\\Answerer\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
