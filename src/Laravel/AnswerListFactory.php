@@ -46,16 +46,16 @@ class AnswerListFactory implements AnswerListFactoryInterface
 
         //Пропустим первый элемент - остальное id вопрос-ответов
         for( $i = 1; $i < count($params); $i++) {
-            $answers[] = hexdec($params[$i]);
+            $answers[] = (int) $params[$i];
         }
 
         //Пропустим первый символ (p) - остальное id элемента группы родителя
-        $owner_id = (int) hexdec(substr($params[0], 1));
+        $owner_id = (int) substr($params[0], 1);
 
         //Сортировка по полю sorter (оно инкрементится автоматически)
         $sorts = [$group_name => ['sorter'=>'ASC']];
 
-        //Условия по родителю, и id - переданным от фронта развернутом из hex вида
+        //Условия по родителю, и id - переданным от фронта
         $specs = [$group_name => ['owner_id' => $owner_id, 'id' => $answers]];
 
         $collection =  $this->queryAgent->getGroupFlat($block_name, $group_name, $sorts, $specs);

@@ -14,10 +14,10 @@ class EncryptedLinkGenerator implements EncryptedLinkGeneratorInterface
      */
     public function generate($parent_id, $answers)
     {
-        $encrypted_link = 'p'.dechex($parent_id);
+        $encrypted_link = 'p'.$parent_id;
 
         foreach($answers as $id){
-            $encrypted_link .= 'q'.dechex($id);
+            $encrypted_link .= 'q'.$id;
         }
     }
 
